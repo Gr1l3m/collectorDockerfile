@@ -2,9 +2,8 @@ FROM nvcr.io/nvidia/l4t-base:r32.4.4
 
 RUN apt-get update && apt-get install -y \
     autoconf libtool unzip python3-dev python3-pip git build-essential \
-    && python3 -m pip install -U pip \
-    && rm -rf /var/lib/apt/lists/*
-
+    && python3 -m pip install -U pip
+    
 WORKDIR /
 
 COPY install_protobuf-3.8.0.sh install_protobuf-3.8.0.sh
@@ -26,3 +25,5 @@ RUN python -m pip install onnx==1.4.1
 WORKDIR /tensorrt_demos/plugins
 
 RUN make -j8
+
+RUN rm -rf /var/lib/apt/lists/*
