@@ -15,6 +15,10 @@ RUN git clone https://github.com/jkjung-avt/tensorrt_demos
 
 WORKDIR /tensorrt_demos/ssd
 
+RUN rm install_pycuda.sh
+
+COPY install_pycuda.sh install_pycuda.sh
+
 RUN ./install_pycuda.sh && python -m pip install onnx==1.4.1
 
 WORKDIR /tensorrt_demos/plugins
