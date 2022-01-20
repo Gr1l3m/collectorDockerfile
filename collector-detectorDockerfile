@@ -9,24 +9,26 @@ RUN python3 -m pip install -U pip
     
 WORKDIR /
 
-COPY install_protobuf-3.8.0.sh install_protobuf-3.8.0.sh
+RUN python3 --version
 
-RUN chmod +x install_protobuf-3.8.0.sh && ./install_protobuf-3.8.0.sh
+# COPY install_protobuf-3.8.0.sh install_protobuf-3.8.0.sh
 
-RUN git clone https://github.com/jkjung-avt/tensorrt_demos
+# RUN chmod +x install_protobuf-3.8.0.sh && ./install_protobuf-3.8.0.sh
 
-WORKDIR /tensorrt_demos/ssd
+# RUN git clone https://github.com/jkjung-avt/tensorrt_demos
 
-RUN rm install_pycuda.sh
+# WORKDIR /tensorrt_demos/ssd
 
-COPY install_pycuda.sh install_pycuda.sh
+# RUN rm install_pycuda.sh
 
-RUN chmod +x install_pycuda.sh && ./install_pycuda.sh 
+# COPY install_pycuda.sh install_pycuda.sh
 
-RUN python -m pip install onnx==1.4.1
+# RUN chmod +x install_pycuda.sh && ./install_pycuda.sh 
 
-WORKDIR /tensorrt_demos/plugins
+# RUN python -m pip install onnx==1.4.1
 
-RUN make -j8
+# WORKDIR /tensorrt_demos/plugins
+
+# RUN make -j8
 
 RUN rm -rf /var/lib/apt/lists/*
