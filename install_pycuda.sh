@@ -14,9 +14,9 @@ folder=${HOME}/src
 mkdir -p $folder
 
 echo "** Install requirements"
-apt-get install -y build-essential python3-dev
+apt-get install -y build-essential python3.8-dev
 apt-get install -y libboost-python-dev libboost-thread-dev
-pip3 install setuptools
+python3 -m pip install setuptools
 
 boost_pylib=$(basename /usr/lib/${arch}-linux-gnu/libboost_python*-py3?.so)
 boost_pylibname=${boost_pylib%.so}
