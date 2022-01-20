@@ -1,8 +1,11 @@
 FROM nvcr.io/nvidia/l4t-base:r32.4.4
 
 RUN apt-get update && apt-get install -y \
-    autoconf libtool unzip python3.8-dev python3-pip git build-essential \
-    && python3 -m pip install -U pip
+    autoconf libtool unzip python3.8-dev python3-pip git build-essential
+
+RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8 0
+
+RUN python3 -m pip install -U pip
     
 WORKDIR /
 
