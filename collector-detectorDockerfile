@@ -13,6 +13,8 @@ COPY install_protobuf-3.8.0.sh install_protobuf-3.8.0.sh
 
 RUN chmod +x install_protobuf-3.8.0.sh && ./install_protobuf-3.8.0.sh
 
+RUN python3 -m pip install markupsafe
+
 RUN git clone https://github.com/jkjung-avt/tensorrt_demos
 
 WORKDIR /tensorrt_demos/ssd
