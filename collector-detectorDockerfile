@@ -25,7 +25,7 @@ COPY install_pycuda.sh install_pycuda.sh
 
 RUN chmod +x install_pycuda.sh && ./install_pycuda.sh
 
-RUN apt install cmake
+RUN apt-get install -y cmake
 
 RUN python3 -m pip install onnx==1.4.1
 
