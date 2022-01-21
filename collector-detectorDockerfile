@@ -34,3 +34,5 @@ WORKDIR /tensorrt_demos/plugins
 RUN make -j8
 
 RUN rm -rf /var/lib/apt/lists/*
+
+RUN rm -rf /root/src
