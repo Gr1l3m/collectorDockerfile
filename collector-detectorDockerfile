@@ -11,7 +11,7 @@ WORKDIR /
 
 COPY install_protobuf-3.8.0.sh install_protobuf-3.8.0.sh
 
-RUN chmod +x install_protobuf-3.8.0.sh && ./install_protobuf-3.8.0.sh
+RUN chmod +x install_protobuf-3.8.0.sh && ./install_protobuf-3.8.0.sh && rm -rf /root/src
 
 RUN python3 -m pip install markupsafe
 
@@ -34,5 +34,3 @@ WORKDIR /tensorrt_demos/plugins
 RUN make -j8
 
 RUN rm -rf /var/lib/apt/lists/*
-
-RUN rm -rf /root/src
