@@ -27,7 +27,7 @@ RUN chmod +x install_pycuda.sh && ./install_pycuda.sh
 
 RUN apt-get install -y cmake
 
-RUN python3 -m pip install onnx==1.4.1
+RUN python3 -m pip install onnx==1.4.1 opencv-python numpy pyyaml matplotlib
 
 WORKDIR /tensorrt_demos/plugins
 
